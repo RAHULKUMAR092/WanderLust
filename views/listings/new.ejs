@@ -4,7 +4,12 @@
     <!-- <br /><br /> -->
     <body>
       <h2>Create a New Listing</h2>
-      <form action="/listings" method="POST">
+      <form
+        action="/listings"
+        method="POST"
+        novalidate
+        class="needs-validation"
+      >
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
           <input
@@ -12,12 +17,15 @@
             placeholder="Add a catchy title"
             type="text"
             class="form-control"
+            required
           />
+          <div class="valid-feedback">Title looks good!</div>
         </div>
         <div class="mb-3">
-          <label for="description" class="form-label">description</label>
-          <textarea name="listing[description]" class="form-control">
+          <label for="description" class="form-label">Description</label>
+          <textarea name="listing[description]" class="form-control" required>
           </textarea>
+          <div class="invalid-feedback">Please enter a short description</div>
         </div>
 
         <div class="mb-3">
@@ -36,9 +44,10 @@
             <input
               name="listing[price]"
               placeholder="&#8377; 1200"
-              type="number"
               class="form-control"
+              required
             />
+            <div class="invalid-feedback">Price should be valid</div>
           </div>
 
           <div class="mb-3 col-md-8">
@@ -48,7 +57,9 @@
               placeholder="India"
               type="text"
               class="form-control"
+              required
             />
+            <div class="invalid-feedback">Country name should be valid</div>
           </div>
         </div>
 
@@ -59,7 +70,9 @@
             placeholder="Up, Jaipur, Rajasthan"
             type="text"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">Location should be valid</div>
         </div>
         <!-- <br /> -->
         <div class="mb-3">
